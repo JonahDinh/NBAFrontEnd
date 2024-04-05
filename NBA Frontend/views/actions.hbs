@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Actions</title>
+</head>
+<body>
+<div class="container">
+    <h1>Activities</h1>
+    <table class="table table-striped p-5">
+        <thead>
+        <tr>
+            <th>Last four actions:</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each actions}}
+            <tr>
+                <td>{{this}}</td>
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+</div>
+<script>
+    // JavaScript code to reverse the order of actions
+    const actions = document.querySelectorAll("td");
+    const reversedActions = Array.from(actions).reverse();
+    actions.forEach((td, index) => {
+        td.textContent = reversedActions[index].textContent;
+    });
+</script>
+</body>
+</html>

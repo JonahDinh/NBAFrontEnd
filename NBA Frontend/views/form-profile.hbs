@@ -1,0 +1,67 @@
+<div class="card text-white bg-primary mb-3">
+    <div class="p-3">
+        <form action="/form/profile/" method="post" id="profile-form">
+            <h1>{{ title }}</h1>
+            <!-- Profile Title -->
+            <div class="mb-2">
+                <label for="profileTitle">Profile Title:</label>
+                <input type="text" class="form-control {{#if err.profileTitle}}is-invalid{{/if}}"
+                       placeholder="Enter your profile title" id="profileTitle" name="profileTitle" required
+                       value="{{submittedProfileTitle}}"/>
+                <div class="invalid-feedback">{{err.profileTitle}}</div>
+            </div>
+            <!-- Favourite Game -->
+            <div class="mb-2">
+                <label for="favouriteGame">Favourite Game:</label>
+                <input type="text" class="form-control {{#if err.favouriteGame}}is-invalid{{/if}}"
+                       placeholder="Enter your favourite game" id="favouriteGame" name="favouriteGame"
+                       value="{{submittedFavouriteGame}}"/>
+                <div class="invalid-feedback">{{err.favouriteGame}}</div>
+            </div>
+            <!-- Discord url -->
+            <div class="mb-2">
+                <label for="discord">Discord url:</label>
+                <input type="url" class="form-control {{#if err.discord}}is-invalid{{/if}}"
+                       placeholder="Enter your Discord" id="discord" name="discord"
+                       value="{{submittedDiscord}}"/>
+                <div class="invalid-feedback">{{err.discord}}</div>
+            </div>
+            <!-- Twitter url -->
+            <div class="mb-2">
+                <label for="twitterurl">Twitter url:</label>
+                <input type="url" class="form-control {{#if err.twitter}}is-invalid{{/if}}"
+                       placeholder="Enter your Twitter" id="twitter" name="twitter"
+                       value="{{submittedTwitter}}"/>
+                <div class="invalid-feedback">{{err.twitter}}</div>
+            </div>
+            <!-- YouTube url -->
+            <div class="mb-2">
+                <label for="youtubeurl">YouTube url:</label>
+                <input type="url" class="form-control {{#if err.youtube}}is-invalid{{/if}}"
+                       placeholder="Enter your YouTube" id="youtube" name="youtube"
+                       value="{{submittedYouTube}}"/>
+                <div class="invalid-feedback">{{err.youtube}}</div>
+            </div>
+            <!-- Website url -->
+            <div class="mb-2">
+                <label for="websiteurl">Website url:</label>
+                <input type="text" class="form-control {{#if err.website}}is-invalid{{/if}}"
+                       placeholder="Enter your website" id="website" name="website"
+                       value="{{submittedWebsite}}"/>
+                <div class="invalid-feedback">{{err.website}}</div>
+            </div>
+            <!-- Remember Me checkbox -->
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="rememberMe" name="rememberMe">
+                <label class="form-check-label" for="rememberMe">Remember Me</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        {{#if isSubmitted}}
+            <div class="alert alert-success" role="alert">
+                Update Successful
+                <a class="btn btn-secondary" href="/">Go Home</a>
+            </div>
+        {{/if}}
+    </div>
+</div>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html data-bs-theme="light">
+<head>
+    <title>{{title}}</title>
+    <link rel='stylesheet' href='/bw/lux/bootstrap.css' />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+</head>
+<body class="dark">
+<nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark" >
+    <div class="container-fluid">
+        <a class="navbar-brand fs-1" href="#">NBA Information</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/">Home
+                        <span class="visually-hidden">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/form/complaint">Complaints</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/form/profile">Edit Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/sessions">See Activity</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <div class="p-5">
+        {{{body}}}
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<div class="card text-white bg-primary mb-3" >
+<div class="p-3">
+    <form action="/form/complaint/" method="post"  enctype="multipart/form-data" id="complaint-form">
+        <h1>{{ title }}</h1>
+        <!-- Name -->
+        <div class="mb-2">
+            <label for="complainee">Name:</label>
+            <input type="text" class="form-control {{#if err.complainee}}is-invalid{{/if}}"
+                   placeholder="Enter your name" id="complainee" name="complainee" required
+                   value="{{submittedComplainee}}"/>
+            <div class="invalid-feedback">{{err.complainee}}</div>
+        </div>
+        <!-- Email -->
+        <div class="mb-2">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control {{#if err.email}}is-invalid{{/if}}" placeholder="Enter email"
+                   id="email" name="email" required value="{{submittedEmail}}"/>
+            <div class="invalid-feedback">{{err.email}}</div>
+        </div>
+        <!-- Complaint Category -->
+        <div class="mb-2">
+            <label for="complaint-category">Complaint Category:</label>
+            <select class="form-select {{#if err.complaintCategory}}is-invalid{{/if}}" id="complaint-category"
+                    name="complaintCategory" required>
+                <option value="" selected disabled>Select a category</option>
+                <option value="category1">Category 1</option>
+                <option value="category2">Category 2</option>
+            </select>
+            <div class="invalid-feedback">{{err.complaintCategory}}</div>
+        </div>
+        <!-- Complaint Description -->
+        <div class="mb-2">
+            <label for="complaint-description">Complaint Description (max three lines):</label>
+            <textarea name="complaintDescription" placeholder="Enter your complaint description"
+                      class="form-control" id="complaint-description" rows="3"></textarea>
+        </div>
+        <!-- Image Upload -->
+        <div class="mb-2">
+            <label for="image">Image Upload (only one):</label>
+            <input name="image" type="file" class="form-control {{#if err.image}}is-invalid{{/if}}"
+                   id="image" required/>
+            <div class="invalid-feedback">{{err.image}}</div>
+        </div>
+        <!-- Would you like to hear a response? -->
+        <div class="mb-2 form-check">
+            <input class="form-check-input" type="checkbox" name="responseRequested" id="responseRequested"
+                   value="yes">
+            <label class="form-check-label" for="responseRequested">Would you like to hear a response?</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    {{#if isSubmitted}}
+        {{#if isSubmitted}}
+            <div class="alert alert-success" role="alert">
+                Complaint Submitted
+                <a class="btn btn-secondary" href="/">Go Home</a>
+            </div>
+        {{/if}}
+    {{/if}}
+</div>
+</div>
